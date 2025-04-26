@@ -58,7 +58,7 @@ html {
 }
 	#banner {
   position: relative;      /* 자식의 absolute 기준 */
-  height: 130vh;
+  height: 80vh;
 }
 
 /* 위쪽: 전체 너비에, 높이 40%만 이미지 + 텍스트 */
@@ -468,7 +468,8 @@ Site made with: <a href="https://templated.co/">TEMPLATED.CO</a>
     }, 500);
   }
 
-  setInterval(fadeText, 4000);
+  fadeText();
+	setInterval(fadeText, 4000);
 function openModal(id) {
     document.getElementById(id).style.display = "block";
   }
