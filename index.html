@@ -58,7 +58,7 @@ html {
 }
 	#banner {
   position: relative;      /* 자식의 absolute 기준 */
-  height: 80vh;
+  height: 130vh;
 }
 
 /* 위쪽: 전체 너비에, 높이 40%만 이미지 + 텍스트 */
@@ -80,6 +80,7 @@ html {
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+	  margin-top: 30px;
 }
 
 /* 아래쪽: 40% 지점부터 bottom(100%)까지 흰 배경 */
@@ -100,6 +101,9 @@ html {
   color: #555;
   text-decoration: none;
 }
+	#designprocess {
+  display: none;
+}
 </style></head>
 	
 <body>
@@ -117,7 +121,7 @@ html {
 
 <section id="banner">
   <div class="banner-top">
-    <h1 id="slider-text"></h1>
+  <h1 id="slider-text">SurgiPrep</h1>
   </div>
   <div class="banner-bottom">
     <a href="#designprocess">▼</a>
