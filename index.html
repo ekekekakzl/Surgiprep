@@ -81,21 +81,24 @@ html {
       transition: opacity 0.5s ease-in-out;
     }
 
-    /* 아래쪽: 화살표 */
-    .banner-bottom {
-      height: 40%;
-      background-color: #fff;
-      position: relative;
-    }
-    .banner-bottom a {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      font-size: 32px;
-      color: #555;
-      text-decoration: none;
-    }
+    /* 흰 배경이 뷰포트의 40% 높이를 차지 */
+.banner-bottom {
+  height: 40vh;              /* → 뷰포트 높이의 40% */
+  background-color: #fff;
+  position: relative;
+}
+
+/* 화살표를 맨 아래에 고정 */
+.banner-bottom a {
+  position: absolute;
+  bottom: 0;                 /* ← 하단에 딱 붙음 */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  color: #555;
+  text-decoration: none;
+  padding-bottom: 8px;       /* ← 원하면 여백 조절 */
+}
 </style></head>
 	
 <body>
