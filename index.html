@@ -5,9 +5,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/main.css">
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-papYF0FJ+0jA+6nzpMZSsNlH+qGZl/7Ckp5x0YroE/zvcaxX+vOV8j6lGP+F8qWtvhO6T+C2RNNhC6vHdKQkDA=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
@@ -137,10 +135,15 @@ html {
 /* 햄버거는 무조건 오른쪽에 */
 #nav .navPanelToggle {
   position: absolute;
-  right: 20px;
+  top: 50%;                    /* 세로 중앙 */
+  right: 20px;                 /* 우측 20px */
+  transform: translateY(-50%); /* top:50% 보정 */
+  font-size: 24px;             /* 아이콘 크기 */
   color: #fff;
-  font-size: 24px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;               /* nav 위 아이콘 우선 */
 }
 
 /* 가운데 링크들 */
@@ -174,7 +177,7 @@ body {
     <a href="index.html#Team">Our Team</a>
     <!-- 모바일 햄버거 토글 -->
     <a href="#navPanel" class="navPanelToggle">
-      <span class="fa fa-bars"></span>
+      <i class="fa fa-bars"></span>
     </a>
   </nav>
 </header>
