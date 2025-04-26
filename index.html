@@ -65,7 +65,7 @@ html {
 .banner-top {
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 80%;
+  height: 70%;
   background: url('images/banner.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -101,34 +101,70 @@ html {
   color: #162ea8;
   text-decoration: none;
 }
-	/* ─── 여기부터 추가 ─── */
-  /* nav(#nav)를 화면 상단에 고정 */
-  #nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #07176d; /* 필요에 따라 투명 또는 다른 색으로 조정 */
-  }
-  /* nav가 차지하는 높이만큼 본문 상단 여백 확보 */
-  body {
-    padding-top: 60px; /* 실제 nav/헤더 높이에 맞춰 조정 */
-  }
-  /* ──────────────────── */
+/* ─── 네비게이션 고정 및 스타일 ─── */
+#nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 60px;              /* 네비 높이 */
+  line-height: 60px;         /* 텍스트 세로 중앙 정렬 */
+  background-color: #07176d; /* 배경색 */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* 로고 글자 크기 및 색 */
+#nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+/* 메뉴 링크들 */
+#nav a:not(.logo) {
+  color: #fff;
+  font-size: 18px;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* 햄버거 토글 색상 */
+#nav .navPanelToggle {
+  color: #fff;
+  margin-left: 20px;
+}
+
+/* ─── 배너가 nav 바로 아래 붙도록 조정 ─── */
+body {
+  margin: 0;            /* 불필요한 기본 여백 제거 */
+  padding: 0;           /* padding-top 대신 banner에 margin 사용 */
+}
+#banner {
+  position: relative;
+  margin-top: 60px;                    /* nav 높이와 동일하게 띄우기 */
+  height: calc(100vh - 60px);          /* nav 높이만큼 뺀 화면 높이 */
+}
 </style></head>
 	
 <body>
 <!-- Header -->
 <header id="header">
-<div class="inner">
-<a href="index.html" class="logo">Surgiprep</a>
-<nav id="nav">
-<a href="index.html">Home</a>
-<a href="index.html#designprocess">Design Process</a>
-<a href="index.html#Team">Our Team</a>
-</nav><a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-</div>
+  <nav id="nav">
+    <!-- 로고 -->
+    <a href="index.html" class="logo">Surgiprep</a>
+    <!-- 메뉴 링크들 -->
+    <a href="index.html">Home</a>
+    <a href="index.html#designprocess">Design Process</a>
+    <a href="index.html#Team">Our Team</a>
+    <!-- 모바일 햄버거 토글 -->
+    <a href="#navPanel" class="navPanelToggle">
+      <span class="fa fa-bars"></span>
+    </a>
+  </nav>
 </header>
 
 <section id="banner">
