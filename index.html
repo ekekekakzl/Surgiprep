@@ -11,182 +11,55 @@
     referrerpolicy="no-referrer"
   />
   <style>
-    /* 기본 리셋 */
-    body {margin: 0; padding: 0;}
-    html {scroll-behavior: smooth;}
+  /* 기본 리셋 */
+  body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-    @keyframes fadeMoveUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-@font-face {
-  font-family: 'NanumGothic';
-  src: url('/assets/fonts/NanumGothic.woff2') format('woff2'),
-       url('/assets/fonts/NanumGothic.woff')  format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-body {
-  font-family: 'NanumGothic', sans-serif;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    padding-top: 80px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
+  @keyframes fadeMoveUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
-  .modal-content {
-    background-color: #fff;
-    margin: auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 900px;
-    border-radius: 10px;
+  @font-face {
+    font-family: 'NanumGothic';
+    src: url('/assets/fonts/NanumGothic.woff2') format('woff2'),
+         url('/assets/fonts/NanumGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
+  body { font-family: 'NanumGothic', sans-serif; }
 
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
+  .modal { display: none; position: fixed; z-index: 9999; padding-top: 80px; left: 0; top: 0;
+    width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
+  .modal-content { background-color: #fff; margin: auto; padding: 20px; width: 80%; max-width: 900px;
+    border-radius: 10px; }
+  .close { color: #aaa; float: right; font-size: 30px; font-weight: bold; cursor: pointer; }
+
+  #nav {
+    position: fixed; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px;
+    background-color: #07176d; z-index: 1000; display: flex; justify-content: center;
+    padding: 0 80px;
   }
+  #nav .logo { position: absolute; left: 20px; font-size: 24px; font-weight: bold; color: #fff; }
+  #nav .navPanelToggle { position: absolute; right: 20px; transform: translateY(-50%); top:50%;
+    font-size: 24px; color: #fff; z-index: 1001; }
+  #nav a:not(.logo):not(.navPanelToggle) { color: #fff; font-size: 18px; margin: 0 20px; white-space: nowrap; }
 
-	#banner {
-  position: relative; 
-  margin-top: 60px;                     /* nav 높이 */
-      height: calc(100vh - 60px);     /* 자식의 absolute 기준 */
-}
-
-/* 위쪽: 전체 너비에, 높이 40%만 이미지 + 텍스트 */
-.banner-top {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 70%;
-  background: url('images/banner.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 슬라이더 텍스트 (변경 없음) */
-#slider-text {
-  font-size: 40px;
-  font-weight: 900;
-  color: #fff;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-	  margin-top: 40px;
-}
-
-/* 아래쪽: 40% 지점부터 bottom(100%)까지 흰 배경 */
-.banner-bottom {
-  position: absolute;
-  height: 30%;                /* 시작 지점 */
-  left: 0; right: 0; bottom: 0;
-  background-color: #fff;
-}
-
-/* 화살표는 영역의 맨 아래에 붙이기 */
-.banner-bottom a {
-  position: absolute;
-  bottom: 8px;             /* 아래 여백 조절 */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 32px;
-  color: #162ea8;
-  text-decoration: none;
-}
-#nav {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  background-color: #07176d;
-  z-index: 1000;
-  display: flex;
-flex-wrap: nowrap;
-overflow-x: auto;
-  align-items: center;
-
-  /* ① 메뉴(로고 제외)를 가운데로 몰아넣기 */
-  justify-content: center;
-  /* ② 좌우에 padding 주어서 로고·햄버거 공간 확보 */
-  padding: 0 80px;
-}
-
-/* 로고는 무조건 왼쪽에 */
-#nav .logo {
-  position: absolute;
-  left: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-/* 햄버거는 무조건 오른쪽에 */
-#nav .navPanelToggle {
-  display: flex !important;
-  position: absolute;
-  top: 50%;                    /* 세로 중앙 */
-  right: 20px;                 /* 우측 20px */
-  transform: translateY(-50%); /* top:50% 보정 */
-  font-size: 24px;             /* 아이콘 크기 */
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1001;               /* nav 위 아이콘 우선 */
-}
-
-/* 가운데 링크들 */
-#nav a:not(.logo):not(.navPanelToggle) {
-  color: #fff;
-  font-size: 18px;
-  margin: 0 20px;
-  text-decoration: none;
-white-space: nowrap;
-}
-
-/* banner 바로 아래 붙이기 */
-body {
-  margin: 0;
-  padding: 0;
-}
-#banner {
-  margin-top: 60px;                  /* nav 높이 그대로 */
-  height: calc(100vh - 60px);
-}
-
-#about, #designprocess {
-  position: relative;
-}
-.section-arrow {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.section-arrow a {
-  font-size: 32px;
-  color: #162ea8;
-  text-decoration: none;
-}
-	   #about, #designprocess, #Team {
+  #banner { position: relative; margin-top: 60px; height: calc(100vh - 60px); }
+  .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%;
+    background: url('images/banner.jpg') center/cover no-repeat;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #slider-text { font-size: 40px; font-weight: 900; color: #fff;
+    text-align: center; opacity: 0; transition: opacity 0.5s ease-in-out;
+    margin-top: 40px;
+  }
+  .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
+  .banner-bottom a { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    font-size: 32px; color: #162ea8; text-decoration: none;
+  }
+#about, #designprocess, #Team {
     scroll-margin-top: 60px;
 </style></head>
 	
