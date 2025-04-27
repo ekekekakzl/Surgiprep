@@ -461,28 +461,18 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    fadeText();
-    setInterval(fadeText, 4000);
+    // 페이지 열리자마자 첫 문장 셋업 (애니메이션 없이)
+    textEl.textContent = messages[index];
+    textEl.style.opacity = 1;
+    index = (index + 1) % messages.length;
+    
+    // 4초 뒤에 페이드 애니메이션 시작
+    setTimeout(() => {
+      fadeText();
+      // 이후부터는 4초마다 반복
+      setInterval(fadeText, 4000);
+    }, 4000);
   });
 </script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn   = document.querySelector('.navPanelToggle');
-    const panel = document.getElementById('navPanel');
-  
-    // 햄버거 클릭 → 메뉴 열고/닫기
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      panel.classList.toggle('open');
-    });
-  
-    // 메뉴 항목 클릭 시: 패널 닫고, 기본 앵커 동작(스크롤) 허용
-    panel.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        panel.classList.remove('open');
-        // 기본 앵커 href="#..." 대로 스크롤됩니다.
-      });
-    });
-  });
-  </script>
+
 </body></html>
