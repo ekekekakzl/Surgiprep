@@ -478,18 +478,12 @@
   });
 </script>
 <script>
-  // 햄버거 메뉴 토글
-  const navPanelToggle = document.querySelector('.navPanelToggle');
-  const navPanel = document.getElementById('navPanel');
-
-  navPanelToggle.addEventListener('click', () => {
-    navPanel.classList.toggle('open');
-  });
-
-  // 메뉴 항목 클릭 시 자동 닫기
-  navPanel.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navPanel.classList.remove('open');
+  $(function(){
+    $('.navPanelToggle').on('click', function(){
+      $('#navPanel').toggleClass('open');
+    });
+    $('#navPanel a').on('click', function(){
+      $('#navPanel').removeClass('open');
     });
   });
 </script>
