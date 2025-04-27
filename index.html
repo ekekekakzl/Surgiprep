@@ -33,18 +33,6 @@
     .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
     .banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 30px; color: #162ea8; text-decoration: none; }
 	  
-#about {
-  /* 네비게이션(60px) 높이를 제외한 나머지 화면 높이만큼 */
-  height: calc(100vh - 60px);
-  position: relative;          /* .section-arrow 절대위치 기준 */
-  display: flex;               /* 내부 정렬을 위해 */
-  flex-direction: column;
-  justify-content: center;     /* 콘텐츠(텍스트+이미지)를 수직 중앙에 */
-  align-items: center;         /* 가로 중앙 */
-  padding: 0 20px;             /* 좌우 여백 */
-  box-sizing: border-box;
-}
-	  
     /* 섹션 앵커 오프셋 */
     #banner, #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
     .section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
