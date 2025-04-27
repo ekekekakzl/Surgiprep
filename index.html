@@ -32,8 +32,20 @@
     .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
     .banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 25px; color: #162ea8; text-decoration: none; }
 	  
+#about {
+  /* 네비게이션(60px) 높이를 제외한 나머지 화면 높이만큼 */
+  height: calc(100vh - 60px);
+  position: relative;          /* .section-arrow 절대위치 기준 */
+  display: flex;               /* 내부 정렬을 위해 */
+  flex-direction: column;
+  justify-content: center;     /* 콘텐츠(텍스트+이미지)를 수직 중앙에 */
+  align-items: center;         /* 가로 중앙 */
+  padding: 0 20px;             /* 좌우 여백 */
+  box-sizing: border-box;
+}
+	  
     /* 섹션 앵커 오프셋 */
-    #banner #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
+    #banner #about, #designprocess, #Team { scroll-margin-top: 60px; position: fixed; }
     .section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
     .section-arrow a { font-size: 40px; color: #162ea8; text-decoration: none; }
 	  
@@ -43,23 +55,6 @@
     .close { color: #aaa; float: right; font-size: 30px; font-weight: bold; cursor: pointer; }
   </style>
 </head>
-<script>
-  // 햄버거 버튼 & 패널 요소 선택
-  const toggleBtn = document.querySelector('.navPanelToggle');
-  const navPanel = document.getElementById('navPanel');
-
-  // 버튼 클릭 시 패널 열고 닫기
-  toggleBtn.addEventListener('click', () => {
-    navPanel.classList.toggle('open');
-  });
-
-  // 패널 안의 링크 클릭하면 자동으로 패널 닫기
-  navPanel.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navPanel.classList.remove('open');
-    });
-  });
-</script>
 	
 <body>
  <!-- Header -->
@@ -83,7 +78,7 @@
       <a href="#banner">Home</a>
       <a href="#about">About</a>
       <a href="#designprocess">Design Process</a>
-      <a href="#Team">Our Team</a>
+      <a href="#Team">Team</a>
     </nav>
   </div>
 	
@@ -97,7 +92,7 @@
 </section>
 	
 <!-- About Section -->
-<section id="about" style="padding:30px 0; background:#f5f5f5; text-align:center; position: relative; margin-bottom: 50px;">
+<section id="about" style="padding:30px 0; background:#f5f5f5; text-align:center; position: relative; margin-bottom: 60px;">
   <div class="inner" style="max-width:800px; margin:0 auto;">
     <h2 style="font-size:32px; font-weight:900; margin-bottom:20px; color: #000;">About</h2>
     <p style="font-size:24px; line-height:1.6; margin-bottom:20px; color: #000;">간호사와 환자가 함께 만드는 수술 준비 과정, Surgiprep이 함께합니다.</p>
@@ -105,7 +100,7 @@
     <p style="font-size:16px; line-height:1.6; color: #000;">Surgiprep은 단순한 간호 체크리스트를 넘어, 환자에게도 수술 준비 과정을 이해하고 참여할 수 있는 기회를 제공합니다.<br> 환자는 간호사와 소통하며 수술 전 필요한 준비사항을 확인하고, 자신의 상태를 점검할 수 있습니다. 
 	    이를 통해 간호사는 환자의 준비도를 정확하게 파악하고, 보다 안전한 수술을 제공할 수 있습니다.</p>
 	<div style="margin-top:20px;">
-      <img src="images/surgipreplogo.jpg" alt="SurgiPrep Logo" style="max-width:100%; height:auto;">
+      <img src="images/surgipreplogo.jpg" alt="SurgiPrep Logo" style="max-width:50%; height:auto;">
     </div>
     <div class="section-arrow">
       <a href="#designprocess">▼</a>
@@ -115,7 +110,7 @@
 <!-- DesignProcess Section -->	
 <section id="designprocess" style="padding: 50px 0; background: white; margin-bottom: 50px;">
   <div class="inner">
-  <header style="text-align: center; margin-bottom: 50px;">
+  <header style="text-align: center; margin-bottom: 60px;">
     <h2 style="font-size: 40px; font-weight: 700;">Design Process</h2>
   </header>
 <div class="flex flex-3" style="gap: 40px; flex-wrap: wrap; justify-content: center;">
@@ -440,5 +435,22 @@ function openModal(id) {
   function closeModal(id) {
     document.getElementById(id).style.display = "none";
   }
+</script>
+	<script>
+  // 햄버거 버튼 & 패널 요소 선택
+  const toggleBtn = document.querySelector('.navPanelToggle');
+  const navPanel = document.getElementById('navPanel');
+
+  // 버튼 클릭 시 패널 열고 닫기
+  toggleBtn.addEventListener('click', () => {
+    navPanel.classList.toggle('open');
+  });
+
+  // 패널 안의 링크 클릭하면 자동으로 패널 닫기
+  navPanel.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navPanel.classList.remove('open');
+    });
+  });
 </script>
 </body></html>
