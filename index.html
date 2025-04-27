@@ -21,6 +21,7 @@
     #nav .navPanelToggle { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; }
     #nav .navPanelToggle .bar { display: block; width: 24px; height: 3px; margin: 4px 0; background: #fff; }
     #nav a:not(.logo):not(.navPanelToggle) { color: #fff; font-size: 18px; margin: 0 20px; text-decoration: none; white-space: nowrap; }
+	  
     /* 배너 */
     #banner { position: relative; margin-top: 60px; height: calc(100vh - 60px); overflow: hidden; }
     .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
@@ -30,16 +31,36 @@
         -1px -1px 2px rgba(0,0,0,0.8);}
     .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
     .banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 25px; color: #162ea8; text-decoration: none; }
+	  
     /* 섹션 앵커 오프셋 */
-    #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
+    #banner #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
     .section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
-    .section-arrow a { font-size: 35px; color: #162ea8; text-decoration: none; }
+    .section-arrow a { font-size: 40px; color: #162ea8; text-decoration: none; }
+	  
     /* 모달 */
     .modal { display: none; position: fixed; z-index: 9999; padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
     .modal-content { background: #fff; margin: auto; padding: 20px; width: 80%; max-width: 900px; border-radius: 10px; }
     .close { color: #aaa; float: right; font-size: 30px; font-weight: bold; cursor: pointer; }
   </style>
 </head>
+<script>
+  // 햄버거 버튼 & 패널 요소 선택
+  const toggleBtn = document.querySelector('.navPanelToggle');
+  const navPanel = document.getElementById('navPanel');
+
+  // 버튼 클릭 시 패널 열고 닫기
+  toggleBtn.addEventListener('click', () => {
+    navPanel.classList.toggle('open');
+  });
+
+  // 패널 안의 링크 클릭하면 자동으로 패널 닫기
+  navPanel.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navPanel.classList.remove('open');
+    });
+  });
+</script>
+	
 <body>
  <!-- Header -->
   <header>
@@ -80,10 +101,8 @@
   <div class="inner" style="max-width:800px; margin:0 auto;">
     <h2 style="font-size:32px; font-weight:900; margin-bottom:20px; color: #000;">About</h2>
     <p style="font-size:24px; line-height:1.6; margin-bottom:20px; color: #000;">간호사와 환자가 함께 만드는 수술 준비 과정, Surgiprep이 함께합니다.</p>
-    <p style="font-size:18px; line-height:1.6; color: #000;">Surgiprep은 수술 예정 환자의 수술 전 간호 준비 과정을 지원하는 어플리케이션입니다.</p>
-    <p style="font-size:14px; line-height:1.6; color: #000;">병동 및 수술실 간호사를 주요 사용자로 하여, 환자의 수술 준비 상태를 체계적으로 점검할 수 있도록 설계되었습니다.</p>
-    <p style="font-size:16px; line-height:1.6; color: #000;">Surgiprep은 단순한 간호 체크리스트를 넘어, 환자에게도 수술 준비 과정을 이해하고 참여할 수 있는 기회를 제공합니다.</p>
-    <p style="font-size:14px; line-height:1.6; color: #000;"> 환자는 간호사와 소통하며 수술 전 필요한 준비사항을 확인하고, 자신의 상태를 점검할 수 있습니다. 
+    <p style="font-size:18px; line-height:1.6; color: #000;">Surgiprep은 수술 예정 환자의 수술 전 간호 준비 과정을 지원하는 어플리케이션입니다.<br>병동 및 수술실 간호사를 주요 사용자로 하여, 환자의 수술 준비 상태를 체계적으로 점검할 수 있도록 설계되었습니다.</p>
+    <p style="font-size:16px; line-height:1.6; color: #000;">Surgiprep은 단순한 간호 체크리스트를 넘어, 환자에게도 수술 준비 과정을 이해하고 참여할 수 있는 기회를 제공합니다.<br> 환자는 간호사와 소통하며 수술 전 필요한 준비사항을 확인하고, 자신의 상태를 점검할 수 있습니다. 
 	    이를 통해 간호사는 환자의 준비도를 정확하게 파악하고, 보다 안전한 수술을 제공할 수 있습니다.</p>
 	<div style="margin-top:20px;">
       <img src="images/surgipreplogo.jpg" alt="SurgiPrep Logo" style="max-width:100%; height:auto;">
@@ -315,14 +334,8 @@
 <div class="modal-content">
 <span class="close" onclick="closeModal('modal-needfinding')">&times;</span>
 <h2 style="font-size: 28px; font-weight: bold;">📌 필요 발견하기 - Need Finding</h2>
-<p style="font-size: 20px; font-weight: bold; margin-top: 20px;">
-📄 PDF 파일:
 <a href="files/needfinding.pdf" target="_blank" style="font-weight: bold;">PDF 다운로드</a>
-</p>
-<p style="font-size: 20px; font-weight: bold;">
-📊 PPT 파일:
 <a href="files/needfinding.pptx" target="_blank" style="font-weight: bold;">PPT 다운로드</a>
-</p>
 </div>
 </div>
 	<!-- ✅ 모달창 (아이디어 도출하기) -->
@@ -330,14 +343,8 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-idea')">&times;</span>
     <h2 style="font-size: 28px; font-weight: bold;">📌 아이디어 도출하기 - Experience Prototype</h2>
-    <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">
-      📄 PDF 파일:
       <a href="files/experience.pdf" target="_blank" style="font-weight: bold;">PDF 다운로드</a>
-    </p>
-    <p style="font-size: 20px; font-weight: bold;">
-      📊 PPT 파일:
       <a href="files/experience.pptx" target="_blank" style="font-weight: bold;">PPT 다운로드</a>
-    </p>
   </div>
 </div>
 	
@@ -355,14 +362,8 @@
         style="position:absolute; top:0; left:0; width:100%; height:100%;">
       </iframe>
     </div>
-    <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">
-      📄 PDF 파일:
       <a href="files/concept.pdf" target="_blank" style="font-weight: bold;">PDF 다운로드</a>
-    </p>
-    <p style="font-size: 20px; font-weight: bold;">
-      📊 PPT 파일:
       <a href="files/concept.pptx" target="_blank" style="font-weight: bold;">PPT 다운로드</a>
-    </p>
   </div>
 </div>
 	
@@ -370,14 +371,8 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-lofi')">&times;</span>
     <h2 style="font-size: 28px; font-weight: bold;">📌 Low-fidelity 프로토타입 & 테스트 - Low-fi Prototype & Test</h2>
-    <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">
-      📄 PDF 파일:
       <a href="files/low.pdf" target="_blank" style="font-weight: bold;">PDF 다운로드</a>
-    </p>
-    <p style="font-size: 20px; font-weight: bold;">
-      📊 PPT 파일:
       <a href="files/low.pptx" target="_blank" style="font-weight: bold;">PPT 다운로드</a>
-    </p>
   </div>
 </div>
 	
@@ -385,14 +380,8 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-midfi')">&times;</span>
     <h2 style="font-size: 28px; font-weight: bold;">📌 Medium-fidelity 프로토타입 - Medium-fi Prototype</h2>
-    <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">
-      📄 PDF 파일:
       <a href="files/med.pdf" target="_blank" style="font-weight: bold;">PDF 다운로드</a>
-    </p>
-    <p style="font-size: 20px; font-weight: bold;">
-      📊 PPT 파일:
       <a href="files/med.pptx" target="_blank" style="font-weight: bold;">PPT 다운로드</a>
-    </p>
   </div>
 </div>
 	
@@ -400,14 +389,8 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-heuristic')">&times;</span>
     <h2 style="font-size: 28px; font-weight: bold;">📌 그룹 휴리스틱 평가 - Group Heuristic Evaluation</h2>
-    <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">
-      📄 PDF 파일:
       <a href="files/heuristic.pdf" target="_blank" style="font-weight: bold;">PDF 다운로드</a>
-    </p>
-    <p style="font-size: 20px; font-weight: bold;">
-      📊 PPT 파일:
       <a href="files/heuristic.pptx" target="_blank" style="font-weight: bold;">PPT 다운로드</a>
-    </p>
   </div>
 </div>
 	
@@ -415,14 +398,8 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-hifi')">&times;</span>
     <h2 style="font-size: 28px; font-weight: bold;">📌 Hi-fidelity 프로토타입 - Hi-fi Prototype</h2>
-    <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">
-      📄 PDF 파일:
       <a href="files/hifi.pdf" target="_blank" style="font-weight: bold;">PDF 다운로드</a>
-    </p>
-    <p style="font-size: 20px; font-weight: bold;">
-      📊 PPT 파일:
       <a href="files/hifi.pptx" target="_blank" style="font-weight: bold;">PPT 다운로드</a>
-    </p>
   </div>
 </div>
 	
@@ -430,14 +407,8 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-poster')">&times;</span>
     <h2 style="font-size: 28px; font-weight: bold;">📌 포스터 & 최종 발표자료 - Poster & Final Slide</h2>
-    <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">
-      📄 PDF 파일:
       <a href="files/poster.pdf" target="_blank" style="font-weight: bold;">PDF 다운로드</a>
-    </p>
-    <p style="font-size: 20px; font-weight: bold;">
-      📊 PPT 파일:
       <a href="files/poster.pptx" target="_blank" style="font-weight: bold;">PPT 다운로드</a>
-    </p>
   </div>
 </div>
 
