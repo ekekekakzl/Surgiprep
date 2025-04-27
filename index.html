@@ -3,13 +3,9 @@
 <head>
 <title>Surgiprep</title>
 <meta charset="utf-8">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-papYF0FJ+0jA+6nzpMZSsNlH+qGZl/7Ckp5x0YroE/zvcaxX+vOV8j6lGP+F8qWtvhO6T+C2RNNhC6vHdKQkDA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papYF0FJ+0jA+6nzpMZSsNlH+qGZl/7Ckp5x0YroE/zvcaxX+vOV8j6lGP+F8qWtvhO6T+C2RNNhC6vHdKQkDA=="crossorigin="anonymous"referrerpolicy="no-referrer"/>
   <style>
   /* 기본 리셋 */
   body { margin: 0; padding: 0; }
@@ -56,11 +52,12 @@
     margin-top: 40px;
   }
   .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
-  .banner-bottom a { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+  .banner-bottom a i { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
     font-size: 32px; line-height: 1; color: #162ea8; text-decoration: none;
   }
-#about, #designprocess, #Team {
-    scroll-margin-top: 60px;
+#about, #designprocess, #Team {scroll-margin-top: 60px; position: relative;}
+	  .section-arrow { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); }
+    .section-arrow a i { font-size: 32px; color: #162ea8; }
 </style></head>
 	
 <body>
@@ -85,7 +82,7 @@
   <h1 id="slider-text">SurgiPrep</h1>
   </div>
   <div class="banner-bottom">
-    <a href="#about">▼</a>
+   <a href="#about"><i class="fas fa-chevron-down"></i></a>
   </div>
 </section>
 	
@@ -101,7 +98,7 @@
       <<iframe width="560" height="315" src="https://www.youtube.com/embed/tqwh50JVpCA?si=vGvc1zpOne5tabzm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="section-arrow">
-      <a href="#designprocess">▼</a>
+      <a href="#designprocess"><i class="fas fa-chevron-down"></i></a>
     </div>  
   </div>
 </section>
@@ -259,7 +256,7 @@
 
 </div>
 <div class="section-arrow">
-  <a href="#Team">▼</a>
+  <a href="#Team"><i class="fas fa-chevron-down"></i></a>
 </div>
 </section>
 
