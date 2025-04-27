@@ -176,21 +176,21 @@ body {
   margin-top: 60px;                  /* nav 높이 그대로 */
   height: calc(100vh - 60px);
 }
-/* Section Arrow (Design Process & Team) */
-#designprocess {
-      position: relative;
-    }
-    .section-arrow {
-      position: absolute;
-      bottom: 16px;
-      left: 50%;             /* 부모(section) 가로의 50% 지점 */
-      transform: translateX(-50%);
-    }
-    .section-arrow a {
-      font-size: 32px;
-      color: #162ea8;
-      text-decoration: none;
-    }
+
+#about, #designprocess {
+  position: relative;
+}
+.section-arrow {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section-arrow a {
+  font-size: 32px;
+  color: #162ea8;
+  text-decoration: none;
+}
 </style></head>
 	
 <body>
@@ -201,12 +201,12 @@ body {
     <a href="index.html" class="logo">Surgiprep</a>
     <!-- 메뉴 링크들 -->
     <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
     <a href="index.html#designprocess">Design Process</a>
     <a href="index.html#Team">Our Team</a>
     <!-- 모바일 햄버거 토글 -->
     <a href="#navPanel" class="navPanelToggle">
-      <i class="fa fa-bars"></i>
-    </a>
+      <i class="fa fa-bars"></i></a>
   </nav>
 </header>
 
@@ -215,7 +215,17 @@ body {
   <h1 id="slider-text">SurgiPrep</h1>
   </div>
   <div class="banner-bottom">
-    <a href="#designprocess">▼</a>
+    <a href="#about">▼</a>
+  </div>
+</section>
+	
+<!-- About Section -->
+<section id="about" style="padding:100px 0; background:#f5f5f5; text-align:center;">
+  <div class="inner" style="max-width:800px; margin:0 auto;">
+    <h2 style="font-size:32px; font-weight:700; margin-bottom:20px;">About</h2>
+    <p style="font-size:18px; line-height:1.6; margin-bottom:20px;">간호사와 환자가 함께 만드는 수술 준비 과정, Surgiprep이 함께합니다.</p>
+    <p style="font-size:16px; line-height:1.6;">Surgiprep은 수술 예정 환자의 수술 전 간호 준비 과정을 지원하는 어플리케이션입니다. 병동 및 수술실 간호사를 주요 사용자로 하여, 환자의 수술 준비 상태를 체계적으로 점검할 수 있도록 설계되었습니다.</p>
+    <p style="font-size:16px; line-height:1.6;">Surgiprep은 단순한 간호 체크리스트를 넘어, 환자에게도 수술 준비 과정을 이해하고 참여할 수 있는 기회를 제공합니다. 환자는 간호사와 소통하며 수술 전 필요한 준비사항을 확인하고, 자신의 상태를 점검할 수 있습니다. 이를 통해 간호사는 환자의 준비도를 정확하게 파악하고, 보다 안전한 수술을 제공할 수 있습니다.</p>
   </div>
 </section>
 	
