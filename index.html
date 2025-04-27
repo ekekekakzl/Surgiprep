@@ -23,10 +23,10 @@
     #nav a:not(.logo):not(.navPanelToggle) { color: #fff; font-size: 18px; margin: 0 20px; text-decoration: none; white-space: nowrap; }
 	  
     /* 배너 */
-    #banner { height: calc(100vh - 60px);   /* nav(60px)를 뺀 화면 전체 */
-      position: relative; margin-top: 60px; height: calc(100vh - 60px); overflow: hidden; }
+    #banner { height: calc(100vh - 60px); position: relative; margin-top: 60px; overflow: hidden; }
     .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
-    #slider-text { font-size: 30px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 0.5s ease-in-out; animation: fadeMoveUp 1s forwards;
+    #slider-text { font-size: 30px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 0.5s ease-in-out;transform: translateY(30px);
+      opacity: 0;
 	   text-shadow:
         1px 1px 2px rgba(0,0,0,0.8),
         -1px -1px 2px rgba(0,0,0,0.8);}
@@ -38,6 +38,9 @@
     .section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
     .section-arrow a { font-size: 30px; color: #162ea8; text-decoration: none; }
 	  
+    #about, #designprocess, #Team { height: calc(100vh - 60px); position: relative;      /* .section-arrow 용 */
+  overflow: hidden;        /* 콘텐츠 넘침 차단(원하면 제거) */}
+
     /* 모달 */
     .modal { display: none; position: fixed; z-index: 9999; padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
     .modal-content { background: #fff; margin: auto; padding: 20px; width: 80%; max-width: 900px; border-radius: 10px; }
@@ -415,18 +418,24 @@
   const textEl = document.getElementById("slider-text");
 
   function fadeText() {
-  // 1) 초기 상태: 투명 + 30px 아래
-  textEl.style.opacity   = 0;
-  textEl.style.transform = 'translateY(30px)';
+    // 1) 사라지며 아래로 이동
+    textEl.style.opacity   = 0;
+    textEl.style.transform = 'translateY(30px)';
+    setTimeout(() => {
+      // 2) 텍스트 바꾸고
+      textEl.textContent = messages[index];
+      // 3) 나타나며 원위치
+      textEl.style.opacity   = 1;
+      textEl.style.transform = 'translateY(0)';
+      // 4) 다음 인덱스
+      index = (index + 1) % messages.length;
+    }, 500);
+  }
 
-  setTimeout(() => {
-    // 2) 텍스트 교체
-    textEl.textContent = messages[index];
-    // 3) 보여주기 모션: 불투명 + 원위치
-    textEl.style.opacity   = 1;
-    textEl.style.transform = 'translateY(0)';
-    // 인덱스 증분
-    index = (index + 1) % messages.length;
-  }, 500);
-}
+  // DOM 로드 후 바로 실행하도록
+  document.addEventListener('DOMContentLoaded', () => {
+    fadeText();                         // 첫 문장 표시
+    setInterval(fadeText, 4000);        // 4초마다 반복
+  });
+</script>
 </body></html>
