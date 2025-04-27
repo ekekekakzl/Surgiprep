@@ -25,7 +25,7 @@
     /* 배너 */
     #banner { height: calc(100vh - 60px); position: relative; margin-top: 60px; overflow: hidden; }
     .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
-    #slider-text { font-size: 30px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 0.5s ease-in-out; animation: fadeMoveUp 0.5s ease-in-out forwards;
+    #slider-text { font-size: 30px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 0.5s ease-in-out; animation: fadeMoveUp 1s ease-in-out forwards;
 	   text-shadow:
         1px 1px 2px rgba(0,0,0,0.8),
         -1px -1px 2px rgba(0,0,0,0.8);}
@@ -404,6 +404,15 @@
       <a href="files/poster.pptx" target="_blank" style="font-weight: bold; font-size: 20px;">PPT 다운로드</a>
   </div>
 </div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
 
 <script>
   const messages = [
