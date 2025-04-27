@@ -1,94 +1,63 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Surgiprep</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papYF0FJ+0jA+6nzpMZSsNlH+qGZl/7Ckp5x0YroE/zvcaxX+vOV8j6lGP+F8qWtvhO6T+C2RNNhC6vHdKQkDA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surgiprep</title>
+  <link rel="stylesheet" href="assets/css/main.css">
   <style>
-  /* 기본 리셋 */
-  body { margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  @keyframes fadeMoveUp {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-
-  @font-face {
-    font-family: 'NanumGothic';
-    src: url('/assets/fonts/NanumGothic.woff2') format('woff2'),
-         url('/assets/fonts/NanumGothic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  body { font-family: 'NanumGothic', sans-serif; }
-	  
-/* Ensure Font Awesome icons render */
-    .fa, .fa-solid {
-      font-family: 'Font Awesome 6 Free' !important;
-      font-weight: 900 !important;
-    }
-
-  .modal { display: none; position: fixed; z-index: 9999; padding-top: 80px; left: 0; top: 0;
-    width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
-  .modal-content { background-color: #fff; margin: auto; padding: 20px; width: 80%; max-width: 900px;
-    border-radius: 10px; }
-  .close { color: #aaa; float: right; font-size: 30px; font-weight: bold; cursor: pointer; }
-
-  #nav {
-    position: fixed; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px;
-    background-color: #07176d; z-index: 1000; display: flex; justify-content: center;
-    padding: 0 80px;
-  }
-  #nav .logo { position: absolute; left: 20px; font-size: 24px; font-weight: bold; color: #fff; }
-  #nav .navPanelToggle { position: absolute; right: 20px; transform: translateY(-50%); top:50%;
-    font-size: 24px; color: #fff; z-index: 1001; }
-  #nav a:not(.logo):not(.navPanelToggle) { color: #fff; font-size: 18px; margin: 0 20px; white-space: nowrap; }
-
-  #banner { position: relative; margin-top: 60px; height: calc(100vh - 60px); }
-  .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%;
-    background: url('images/banner.jpg') center/cover no-repeat;
-    display: flex; align-items: center; justify-content: center;
-  }
-  #slider-text { font-size: 40px; font-weight: 900; color: #fff;
-    text-align: center; opacity: 0; transition: opacity 0.5s ease-in-out;
-    margin-top: 40px;
-  }
-  .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
-  .banner-bottom a i { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
-    font-size: 32px; line-height: 1; color: #162ea8; text-decoration: none;
-  }
-#about, #designprocess, #Team {scroll-margin-top: 60px; position: relative;}
-	  .section-arrow { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); }
-    .section-arrow a i { font-size: 32px; color: #162ea8; }
-</style></head>
-	
+    /* 기본 리셋 */
+    body, html { margin: 0; padding: 0; scroll-behavior: smooth; }
+    /* 애니메이션 */
+    @keyframes fadeMoveUp { 0% { opacity: 0; transform: translateY(30px);} 100% { opacity: 1; transform: translateY(0);} }
+    /* 웹폰트 */
+    @font-face { font-family: 'NanumGothic'; src: url('/assets/fonts/NanumGothic.woff2') format('woff2'), url('/assets/fonts/NanumGothic.woff') format('woff'); font-weight: normal; font-style: normal; font-display: swap; }
+    body { font-family: 'NanumGothic', sans-serif; }
+    /* 네비게이션 */
+    #nav { position: fixed; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px; background: #07176d; z-index: 1000; display: flex; justify-content: center; padding: 0 80px; }
+    #nav .logo { position: absolute; left: 20px; font-size: 24px; font-weight: bold; color: #fff; text-decoration: none; }
+    #nav .navPanelToggle { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; }
+    #nav .navPanelToggle .bar { display: block; width: 24px; height: 3px; margin: 4px 0; background: #fff; }
+    #nav a:not(.logo):not(.navPanelToggle) { color: #fff; font-size: 18px; margin: 0 20px; text-decoration: none; white-space: nowrap; }
+    /* 배너 */
+    #banner { position: relative; margin-top: 60px; height: calc(100vh - 60px); overflow: hidden; }
+    .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
+    #slider-text { font-size: 40px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 0.5s ease-in-out; animation: fadeMoveUp 1s forwards; }
+    .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
+    .banner-bottom a svg { width: 48px; height: 24px; stroke: #162ea8; stroke-width: 4; fill: none; }
+    /* 섹션 앵커 오프셋 */
+    #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
+    .section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
+    .section-arrow a svg { width: 48px; height: 24px; stroke: #162ea8; stroke-width: 4; fill: none; }
+    /* 모달 */
+    .modal { display: none; position: fixed; z-index: 9999; padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
+    .modal-content { background: #fff; margin: auto; padding: 20px; width: 80%; max-width: 900px; border-radius: 10px; }
+    .close { color: #aaa; float: right; font-size: 30px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
 <body>
-<!-- Header -->
-<header id="header">
-  <nav id="nav">
-    <!-- 로고 -->
-    <a href="index.html" class="logo">Surgiprep</a>
-    <!-- 메뉴 링크들 -->
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#designprocess">Design Process</a>
-    <a href="index.html#Team">Our Team</a>
-    <!-- 모바일 햄버거 토글 -->
-    <a href="#navPanel" class="navPanelToggle">
-      <i class="fa fa-bars"></i></a>
-  </nav>
-</header>
+ <!-- Header -->
+  <header>
+    <nav id="nav">
+      <a href="#" class="logo">Surgiprep</a>
+      <a href="#banner">Home</a>
+      <a href="#about">About</a>
+      <a href="#designprocess">Design Process</a>
+      <a href="#Team">Our Team</a>
+      <button class="navPanelToggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
 
 <section id="banner">
   <div class="banner-top">
   <h1 id="slider-text">SurgiPrep</h1>
   </div>
   <div class="banner-bottom">
-  <a href="#about"><i class="fa-solid fa-chevron-down"></i></a>
+  <a href="#about"> <svg viewBox="0 0 48 24"><polyline points="0,0 24,24 48,0" /></svg></a>
   </div>
 </section>
 	
@@ -104,7 +73,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tqwh50JVpCA?si=vGvc1zpOne5tabzm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="section-arrow">
-      <a href="#designprocess"><i class="fa-solid fa-chevron-down"></i></a>
+      <a href="#designprocess"> <svg viewBox="0 0 48 24"><polyline points="0,0 24,24 48,0" /></svg></a>
     </div>  
   </div>
 </section>
@@ -262,7 +231,7 @@
 
 </div>
 <div class="section-arrow">
-  <a href="#Team"><i class="fa-solid fa-chevron-down"></i></a>
+  <a href="#Team"> <svg viewBox="0 0 48 24"><polyline points="0,0 24,24 48,0" /></svg></a>
 </div>
 </section>
 
