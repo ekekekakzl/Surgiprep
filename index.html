@@ -10,9 +10,11 @@
     body, html { margin: 0; padding: 0; scroll-behavior: smooth; }
     /* 애니메이션 */
     @keyframes fadeMoveUp { 0% { opacity: 0; transform: translateY(30px);} 100% { opacity: 1; transform: translateY(0);} }
+	  
     /* 웹폰트 */
     @font-face { font-family: 'NanumGothic'; src: url('/assets/fonts/NanumGothic.woff2') format('woff2'), url('/assets/fonts/NanumGothic.woff') format('woff'); font-weight: normal; font-style: normal; font-display: swap; }
     body { font-family: 'NanumGothic', sans-serif; }
+	  
     /* 네비게이션 */
     #nav { position: fixed; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px; background: #07176d; z-index: 1000; display: flex; justify-content: center; padding: 0 80px; }
     #nav .logo { position: absolute; left: 20px; font-size: 24px; font-weight: bold; color: #fff; text-decoration: none; }
@@ -24,7 +26,7 @@
     .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
     #slider-text { font-size: 40px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 0.5s ease-in-out; animation: fadeMoveUp 1s forwards; }
     .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
-    .banner-bottom a svg { width: 48px; height: 24px; stroke: #162ea8; stroke-width: 4; fill: none; }
+    .banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 48px; color: #162ea8; text-decoration: none; }
     /* 섹션 앵커 오프셋 */
     #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
     .section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
@@ -57,7 +59,7 @@
   <h1 id="slider-text">SurgiPrep</h1>
   </div>
   <div class="banner-bottom">
-  <a href="#about"> <svg viewBox="0 0 48 24"><polyline points="0,0 24,24 48,0" /></svg></a>
+  <a href="#about">▼</a>
   </div>
 </section>
 	
@@ -73,7 +75,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tqwh50JVpCA?si=vGvc1zpOne5tabzm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="section-arrow">
-      <a href="#designprocess"> <svg viewBox="0 0 48 24"><polyline points="0,0 24,24 48,0" /></svg></a>
+      <a href="#designprocess">▼</a>
     </div>  
   </div>
 </section>
@@ -231,7 +233,7 @@
 
 </div>
 <div class="section-arrow">
-  <a href="#Team"> <svg viewBox="0 0 48 24"><polyline points="0,0 24,24 48,0" /></svg></a>
+  <a href="#Team">▼</a>
 </div>
 </section>
 
