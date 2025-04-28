@@ -23,13 +23,13 @@
 
   /* 웹폰트 – 볼드체 */
   @font-face {
-    font-family: 'NanumGothic';
-    src: url('/assets/fonts/NanumGothicBold.woff2') format('woff2'),
-         url('/assets/fonts/NanumGothicBold.woff')  format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: 'NanumGothicBold';
+  src: url('/assets/fonts/NanumGothicBold.woff2') format('woff2'),
+       url('/assets/fonts/NanumGothicBold.woff')  format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
   /* 기본 폰트 설정 */
   body {
@@ -45,7 +45,7 @@
     /* 배너 */
     #banner { height: calc(100vh - 60px); position: relative; margin-top: 60px; overflow: hidden; }
     .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
-    #slider-text {  font-family: 'NanumGothicBold', sans-serif; font-size: 30px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 1s ease-in-out; animation: fadeMoveUp 0s ease-in-out forwards;}
+    #slider-text { font-family: 'NanumGothicBold', sans-serif; font-size: 30px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 1s ease-in-out; animation: fadeMoveUp 0s ease-in-out forwards;}
     .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
     .banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 40px; color: #162ea8; text-decoration: none; font-weight: 900;}
 	  
