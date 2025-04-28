@@ -31,7 +31,7 @@
     /* 배너 */
     #banner { height: calc(100vh - 60px); position: relative; margin-top: 60px; overflow: hidden; }
     .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
-    #slider-text { font-family: 'NanumGothicBold', sans-serif; font-size: 30px; font-weight: 900; color: #fff; opacity: 0; transition: opacity 1s ease-in-out; animation: fadeMoveUp 0s ease-in-out forwards;}
+    #slider-text { font-family: 'NanumGothicBold', sans-serif; font-size: 30px; color: #fff; opacity: 0; transition: opacity 1s ease-in-out; animation: fadeMoveUp 0s ease-in-out forwards;}
     .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
     .banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 40px; color: #162ea8; text-decoration: none; font-weight: 900;}
 	  
@@ -421,10 +421,10 @@
 
 <script>
   const messages = [
-    "SurgiPrep은 수술 전 환자와 함께 합니다.",
-    "SurgiPrep은 정확하고 편리합니다.",
-    "SurgiPrep은 쉽게 설명합니다.",
-    "SurgiPrep은 효율적 디지털 서포터입니다."
+    "SurgiPrep은 수술 전 환자와 함께 합니다",
+    "SurgiPrep은 정확하고 편리합니다",
+    "SurgiPrep은 쉽게 설명합니다",
+    "SurgiPrep은 효율적 디지털 서포터입니다"
   ];
 
   let index = 0;
@@ -456,8 +456,8 @@
     setTimeout(() => {
       fadeText();
       // 이후부터는 3초마다 반복
-      setInterval(fadeText, 3000);
-    }, 3000);
+      setInterval(fadeText, 3500);
+    }, 3500);
   });
 </script>
 
