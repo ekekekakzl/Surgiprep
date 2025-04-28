@@ -11,31 +11,17 @@
     /* 애니메이션 */
     @keyframes fadeMoveUp { 0% { opacity: 0; transform: translateY(30px);} 100% { opacity: 1; transform: translateY(0);} }
 	  
-/* 웹폰트 – 일반체 */
-@font-face {
-    font-family: 'NanumGothic';
-    src: url('/assets/fonts/NanumGothic.woff2') format('woff2'),
-         url('/assets/fonts/NanumGothic.woff')  format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
 
   /* 웹폰트 – 볼드체 */
   @font-face {
   font-family: 'NanumGothicBold';
   src: url('/assets/fonts/NanumGothicBold.woff2') format('woff2'),
-       url('/assets/fonts/NanumGothicBold.woff')  format('woff');
+       url('/assets/fonts/NanumGothicBold.woff')  format('woff'),
+       url('assets/fonts/NanumGothicBold.ttf')   format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
-  /* 기본 폰트 설정 */
-  body {
-    font-family: 'NanumGothic', sans-serif;
-    font-weight: normal; /* 기본 텍스트는 일반체 */
-  }
 	  
     /* 네비게이션 */
     #nav { position: fixed; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px; background: #07176d; z-index: 1000; display: flex; justify-content: center; padding: 0 80px; }
