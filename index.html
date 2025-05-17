@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-
 <html>
 <head>
   <meta charset="utf-8">
@@ -10,7 +9,7 @@
     /* 기본 리셋 */
     body, html { margin: 0; padding: 0; scroll-behavior: smooth; scroll-padding-top: 60px; }
     /* 애니메이션 */
-    @keyframes fadeMoveUp { 0% { opacity: 0; transform: translateY(30px);} 100% { opacity: 1; transform: translateY(0);} }
+    @keyframes fadeMoveUp { 0% { opacity: 0; : translateY(30px);} 100% { opacity: 1; : translateY(0);} }
 
 /* 웹폰트 – 볼드체 */
 @font-face {
@@ -33,11 +32,11 @@ font-display: swap;
 .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
 #slider-text { font-family: 'NanumGothicBold', sans-serif; font-size: 30px; color: #fff; opacity: 0; transition: opacity 1s ease-in-out; animation: fadeMoveUp 0s ease-in-out forwards;}
 .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
-.banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 40px; color: #162ea8; text-decoration: none; font-weight: 900;}
+.banner-bottom a { position: absolute; bottom: 16px; left: 50%; : translateX(-50%); font-size: 40px; color: #162ea8; text-decoration: none; font-weight: 900;}
   
 /* 섹션 앵커 오프셋 */
 #banner, #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
-.section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
+.section-arrow { position: absolute; bottom: 16px; left: 50%; : translateX(-50%); }
 .section-arrow a { font-size: 40px; font-weight: 900; color: #162ea8; text-decoration: none; }
   
 #about, #Team { height: calc(100vh - 60px); position: relative;      /* .section-arrow 용 */
@@ -53,6 +52,7 @@ overflow: hidden;        /* 콘텐츠 넘침 차단(원하면 제거)*/}
 </head>
 
 <body>
+	<div id="scale-wrapper">
  <!-- Header -->
   <header>
     <nav id="nav">
