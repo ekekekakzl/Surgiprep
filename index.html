@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -7,62 +8,55 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
     /* 기본 리셋 */
-    html, body {
-  margin: 0;
-  padding: 0;
-  overflow: auto; 
-}
-
-#scale-wrapper {
-  width: 2160px;
-  height: 1440px;
-  transform-origin: top left;
-  transform: scale(1); /* 초기값 */
-}
+    body, html { margin: 0; padding: 0; scroll-behavior: smooth; scroll-padding-top: 60px; }
     /* 애니메이션 */
     @keyframes fadeMoveUp { 0% { opacity: 0; transform: translateY(30px);} 100% { opacity: 1; transform: translateY(0);} }
-	  
 
-  /* 웹폰트 – 볼드체 */
-  @font-face {
-  font-family: 'NanumGothicBold';
-  src: url('assets/fonts/NanumGothicBold.woff2') format('woff2'),
-       url('assets/fonts/NanumGothicBold.woff')  format('woff'),
-       url('assets/fonts/NanumGothicBold.ttf')   format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+/\* 웹폰트 – 볼드체 \*/
+@font-face {
+font-family: 'NanumGothicBold';
+src: url('assets/fonts/NanumGothicBold.woff2') format('woff2'),
+url('assets/fonts/NanumGothicBold.woff')  format('woff'),
+url('assets/fonts/NanumGothicBold.ttf')   format('truetype');
+font-weight: normal;
+font-style: normal;
+font-display: swap;
 }
-	  
-    /* 네비게이션 */
-    #nav { position: fixed; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px; background: #07176d; z-index: 1000; display: flex; justify-content: center; padding: 0 80px; }
-    #nav .logo { position: absolute; left: 20px; font-size: 24px; font-weight: bold; color: #fff; text-decoration: none; }
-    #nav a:not(.logo):not(.navPanelToggle) { color: #fff; font-size: 18px; margin: 0 20px; text-decoration: none; white-space: nowrap; }
-	  
-    /* 배너 */
-    #banner { height: calc(100vh - 60px); position: relative; margin-top: 60px; overflow: hidden; }
-    .banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
-    #slider-text { font-family: 'NanumGothicBold', sans-serif; font-size: 30px; color: #fff; opacity: 0; transition: opacity 1s ease-in-out; animation: fadeMoveUp 0s ease-in-out forwards;}
-    .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
-    .banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 40px; color: #162ea8; text-decoration: none; font-weight: 900;}
-	  
-    /* 섹션 앵커 오프셋 */
-    #banner, #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
-    .section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
-    .section-arrow a { font-size: 40px; font-weight: 900; color: #162ea8; text-decoration: none; }
-	  
-    #about, #Team { height: calc(100vh - 60px); position: relative;      /* .section-arrow 용 */
-  overflow: hidden;        /* 콘텐츠 넘침 차단(원하면 제거) */}
 
-    /* 모달 */
-    .modal { display: none; position: fixed; z-index: 9999; padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
-    .modal-content { background: #fff; margin: auto; padding: 20px; width: 80%; max-width: 900px; border-radius: 10px; }
-    .close { color: #aaa; float: right; font-size: 30px; font-weight: bold; cursor: pointer; }
+```
+/* 네비게이션 */
+#nav { position: fixed; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px; background: #07176d; z-index: 1000; display: flex; justify-content: center; padding: 0 80px; }
+#nav .logo { position: absolute; left: 20px; font-size: 24px; font-weight: bold; color: #fff; text-decoration: none; }
+#nav a:not(.logo):not(.navPanelToggle) { color: #fff; font-size: 18px; margin: 0 20px; text-decoration: none; white-space: nowrap; }
+  
+/* 배너 */
+#banner { height: calc(100vh - 60px); position: relative; margin-top: 60px; overflow: hidden; }
+.banner-top { position: absolute; top: 0; left: 0; right: 0; height: 70%; background: url('images/banner.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
+#slider-text { font-family: 'NanumGothicBold', sans-serif; font-size: 30px; color: #fff; opacity: 0; transition: opacity 1s ease-in-out; animation: fadeMoveUp 0s ease-in-out forwards;}
+.banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #fff; }
+.banner-bottom a { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 40px; color: #162ea8; text-decoration: none; font-weight: 900;}
+  
+/* 섹션 앵커 오프셋 */
+#banner, #about, #designprocess, #Team { scroll-margin-top: 60px; position: relative; }
+.section-arrow { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); }
+.section-arrow a { font-size: 40px; font-weight: 900; color: #162ea8; text-decoration: none; }
+  
+#about, #Team { height: calc(100vh - 60px); position: relative;      /* .section-arrow 용 */
+```
+
+overflow: hidden;        /\* 콘텐츠 넘침 차단(원하면 제거) \*/}
+
+```
+/* 모달 */
+.modal { display: none; position: fixed; z-index: 9999; padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
+.modal-content { background: #fff; margin: auto; padding: 20px; width: 80%; max-width: 900px; border-radius: 10px; }
+.close { color: #aaa; float: right; font-size: 30px; font-weight: bold; cursor: pointer; }
+```
+
   </style>
 </head>
-	
+
 <body>
-	 <div id="scale-wrapper">
  <!-- Header -->
   <header>
     <nav id="nav">
@@ -73,7 +67,7 @@
       <a href="#Team">Team</a>
     </nav>
   </header>
-	
+
 <section id="banner">
   <div class="banner-top">
   <h1 id="slider-text"></h1>
@@ -82,17 +76,21 @@
   <a href="#about">﹀</a>
   </div>
 </section>
-	
+
 <!-- About Section -->
+
 <section id="about" style="padding:20px 0; background:#f5f5f5; margin-bottom:60px;">
   <div class="inner" style="max-width:1200px; margin:0 auto; display:flex; align-items:flex-start; flex-wrap:wrap;">
 
-    <!-- 왼쪽: 이미지 + 체험하기 버튼 -->
+```
+<!-- 왼쪽: 이미지 + 체험하기 버튼 -->
+```
+
  <div class="about-image" style="flex:0 0 400px; text-align:center; padding:10px; margin-right:50px;">
   <img src="images/hiprototype.jpg" 
        alt="hifidelity prototype" 
        style="max-width:100%; height:auto; vertical-align:middle; margin-top:80px;">
-  
+
   <div class="experience-btn" style="margin-top:10px;">
     <!-- ✅ 여기 링크만 수정되었습니다 -->
     <a href="https://cloud.justinmind.com/usernote/prototype/e0151e7082d9390f2511f5f8e9ccc04bc26f93e4e8de18a8f5093da76342b541" 
@@ -107,16 +105,19 @@
       Medium-fidelity Prototype
     </a>
 
-    <a href="#" id="experience-link-2"
-       style="display:inline-block;
-              padding:10px 20px;
-              background-color:#162ea8;
-              color:#fff;
-              border-radius:4px;
-              text-decoration:none;
-              font-weight:700;">
-      High-fidelity Prototype
-    </a>
+```
+<a href="#" id="experience-link-2"
+   style="display:inline-block;
+          padding:10px 20px;
+          background-color:#162ea8;
+          color:#fff;
+          border-radius:4px;
+          text-decoration:none;
+          font-weight:700;">
+  High-fidelity Prototype
+</a>
+```
+
   </div>
 </div>
     <!-- 오른쪽: 텍스트 -->
@@ -148,6 +149,7 @@
 </section>
 
 <!-- DesignProcess Section -->	
+
 <section id="designprocess" style="padding: 20px 0; background: white; margin-bottom: 50px;">
   <div class="inner">
   <header style="text-align: center; margin-bottom: 30px;">
@@ -306,42 +308,48 @@
 </section>
 
 <!-- Team -->
+
 <section id="Team" class="wrapper style1 special" style="padding: 50px 30px; background: rgba(3, 86, 229, 0.546); margin-bottom: 50px; position: relative; color: #fff;">
   <div class="inner" style="margin-top:60px; max-width: 800px; margin: 0 auto; text-align: center;">
-    
-    <header style="margin-top: 20px; margin-bottom: 40px;">
-      <h2 style="font-size: 40px; font-weight: 600;">Team</h2>
-      
-    </header>
-    <div class="flex flex-2" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
 
-      <!-- 팀원 1 -->
-      <div class="box person"
-           style="padding: 10px; flex: 0 0 calc(50% - 15px); max-width: calc(50% - 10px); border: 3px solid #fff; border-radius: 15px;">
-        <div class="image round" style="margin-bottom: 10px;">
-          <img src="images/pic03.jpg" alt="Person 1" width="200" height="200" style="border-radius: 50%;">
-        </div>
-        <h3 style="font-size: 24px; font-weight: 800;">신효경</h3>
-        <p style="font-size: 18px; font-weight: bold;">Hyokyeong Shin</p>
-        <p style="font-size: 16px; font-weight: 600;">Web Design<br>Technical implementation</p>
-      </div>
+```
+<header style="margin-top: 20px; margin-bottom: 40px;">
+  <h2 style="font-size: 40px; font-weight: 600;">Team</h2>
+  
+</header>
+<div class="flex flex-2" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
 
-      <!-- 팀원 2 -->
-      <div class="box person"
-           style="padding: 10px; flex: 0 0 calc(50% - 15px); max-width: calc(50% - 10px); border: 3px solid #fff; border-radius: 15px;">
-        <div class="image round" style="margin-bottom: 10px;">
-          <img src="images/pic04.jpg" alt="Person 2" width="200" height="200" style="border-radius: 50%;">
-        </div>
-        <h3 style="font-size: 24px; font-weight: 800;">이혜민</h3>
-        <p style="font-size: 18px; font-weight: bold;">Hyemin Lee</p>
-        <p style="font-size: 16px; font-weight: 600;">UX/UI Design <br> Content & Product management</p>
-      </div>
+  <!-- 팀원 1 -->
+  <div class="box person"
+       style="padding: 10px; flex: 0 0 calc(50% - 15px); max-width: calc(50% - 10px); border: 3px solid #fff; border-radius: 15px;">
+    <div class="image round" style="margin-bottom: 10px;">
+      <img src="images/pic03.jpg" alt="Person 1" width="200" height="200" style="border-radius: 50%;">
     </div>
-    </section>
+    <h3 style="font-size: 24px; font-weight: 800;">신효경</h3>
+    <p style="font-size: 18px; font-weight: bold;">Hyokyeong Shin</p>
+    <p style="font-size: 16px; font-weight: 600;">Web Design<br>Technical implementation</p>
+  </div>
+
+  <!-- 팀원 2 -->
+  <div class="box person"
+       style="padding: 10px; flex: 0 0 calc(50% - 15px); max-width: calc(50% - 10px); border: 3px solid #fff; border-radius: 15px;">
+    <div class="image round" style="margin-bottom: 10px;">
+      <img src="images/pic04.jpg" alt="Person 2" width="200" height="200" style="border-radius: 50%;">
+    </div>
+    <h3 style="font-size: 24px; font-weight: 800;">이혜민</h3>
+    <p style="font-size: 18px; font-weight: bold;">Hyemin Lee</p>
+    <p style="font-size: 16px; font-weight: 600;">UX/UI Design <br> Content & Product management</p>
+  </div>
+</div>
+</section>
+```
 
 <!-- Scripts -->
+
 <script src="assets/js/jquery.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
+
 <!-- ✅ 모달창 (Need Finding) -->
+
 <div id="modal-needfinding" class="modal">
 <div class="modal-content">
 <span class="close" onclick="closeModal('modal-needfinding')">&times;</span>
@@ -359,7 +367,7 @@
       <a href="files/experience.pptx" target="_blank" style="font-weight: bold; font-size: 20px; color: #111;">PPT 다운로드</a>
   </div>
 </div>
-	
+
 <div id="modal-concept" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-concept')">&times;</span>
@@ -378,7 +386,7 @@
       <a href="files/concept.pptx" target="_blank" style="font-weight: bold; font-size: 20px; color: #111;">PPT 다운로드</a>
   </div>
 </div>
-	
+
 <div id="modal-lofi" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-lofi')">&times;</span>
@@ -388,7 +396,7 @@
       <a href="files/low-fipresentation.pptx" target="_blank" style="font-weight: bold; font-size: 20px; color: #111;">PPT 다운로드</a>
   </div>
 </div>
-	
+
 <div id="modal-midfi" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-midfi')">&times;</span>
@@ -402,7 +410,7 @@
       <a href="files/med.pptx" target="_blank" style="font-weight: bold; font-size: 20px; color: #111;">발표자료PPT 다운로드</a>
   </div>
 </div>
-	
+
 <div id="modal-heuristic" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-heuristic')">&times;</span>
@@ -411,7 +419,7 @@
       <a href="files/heuristic.pptx" target="_blank" style="font-weight: bold; font-size: 20px; color: #111;">PPT 다운로드</a>
   </div>
 </div>
-	
+
 <div id="modal-hifi" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-hifi')">&times;</span>
@@ -420,7 +428,7 @@
       <a href="files/hifi.pptx" target="_blank" style="font-weight: bold; font-size: 20px; color: #111;">PPT 다운로드</a>
   </div>
 </div>
-	
+
 <div id="modal-poster" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal-poster')">&times;</span>
@@ -480,19 +488,5 @@
     }, 3500);
   });
 </script>
-		 </div>
-		 <script>
-  function scaleToWindow() {
-    const targetWidth = 1920;
-    const targetHeight = 1080;
-    const scaleX = window.innerWidth / targetWidth;
-    const scaleY = window.innerHeight / targetHeight;
-    const scale = Math.min(scaleX, scaleY);
-    const wrapper = document.getElementById("scale-wrapper");
-    wrapper.style.transform = `scale(${scale})`;
-  }
 
-  window.addEventListener("resize", scaleToWindow);
-  window.addEventListener("load", scaleToWindow);
-</script>
 </body></html>
