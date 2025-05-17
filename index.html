@@ -7,7 +7,18 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
     /* 기본 리셋 */
-    body, html { margin: 0; padding: 0; scroll-behavior: smooth; scroll-padding-top: 60px; }
+    html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 화면 넘침 방지 */
+}
+
+#scale-wrapper {
+  width: 1920px;
+  height: 1080px;
+  transform-origin: top left;
+  transform: scale(1); /* 초기값 */
+}
     /* 애니메이션 */
     @keyframes fadeMoveUp { 0% { opacity: 0; transform: translateY(30px);} 100% { opacity: 1; transform: translateY(0);} }
 	  
@@ -51,6 +62,7 @@
 </head>
 	
 <body>
+	 <div id="scale-wrapper">
  <!-- Header -->
   <header>
     <nav id="nav">
@@ -468,5 +480,19 @@
     }, 3500);
   });
 </script>
+		 </div>
+		 <script>
+  function scaleToWindow() {
+    const targetWidth = 1920;
+    const targetHeight = 1080;
+    const scaleX = window.innerWidth / targetWidth;
+    const scaleY = window.innerHeight / targetHeight;
+    const scale = Math.min(scaleX, scaleY);
+    const wrapper = document.getElementById("scale-wrapper");
+    wrapper.style.transform = `scale(${scale})`;
+  }
 
+  window.addEventListener("resize", scaleToWindow);
+  window.addEventListener("load", scaleToWindow);
+</script>
 </body></html>
