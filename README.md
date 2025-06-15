@@ -1,6 +1,7 @@
 ![image](https://github.com/user-attachments/assets/a9c52568-eb64-441b-991c-ca0598abfe2c)
 
 Surgiprep이란?
+
 Surgiprep은 수술 예정 환자의 수술 전 간호 준비 과정을 지원하는 Tablet PC용 APP입니다.
 Surgiprep은 간호사는 환자의 준비를 정확하게 파악하고, 안전한 수술을 제공합니다.
 
@@ -9,6 +10,7 @@ Surgiprep은 간호사는 환자의 준비를 정확하게 파악하고, 안전�
 ●  단순한 수술 전 간호상태 체크리스트를 넘어, 환자에게도 수술 준비 과정을 이해하고 참여할 수 있는 기회를 제공합니다.
 
 ●  환자는 간호사와 소통하며 수술 전 필요한 준비 사항을 확인하고, 자신의 상태를 점검할 수 있습니다.
+
 
 어떻게 사용하나요?![image](https://github.com/user-attachments/assets/18d19fd1-4196-4e0a-9ab8-3dd8d74594a8)
 
@@ -21,6 +23,7 @@ EHR에 사용하는 사번과 비밀번호를 입력하고 들어가면 환자�
 ● ‘![image](https://github.com/user-attachments/assets/8ccb7994-b254-437a-8fc5-7357cdc6d9cf)’ 버튼 선택 시 간호사 로그인 화면으로 돌아갑니다. 
 
 ● 하단에는 각 Task로 바로 갈 수 있는 버튼으로 구성되어 있습니다.
+
 
 현재 상태(Hi-fi prototype)의 한계점은 무엇인가요?
 
